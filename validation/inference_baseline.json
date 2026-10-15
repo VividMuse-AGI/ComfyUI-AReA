@@ -1,0 +1,21 @@
+{
+  "tested_version": "0.1.1",
+  "also_packaged_as": "0.1.2",
+  "prerelease_version": "0.1",
+  "scope": "Python code and existing tests copied without edits. Documentation and workflow packaging only.",
+  "files": {
+    "__init__.py": "4c0f96b0f0006df5a559d09d44b8d521a32d7992383223310b5ba2a3f88e3e42",
+    "adapter.py": "56115e31190e73c921dc14d9a408f24e480dd5a97292ef1a77d0d24ef3691282",
+    "nodes.py": "ce994f9ea4131c45a7211bfc0b28be345cde1942ce31555770927d58c6db828f",
+    "saving.py": "b5444349da377b5a6aa006241ee7e4fac97a6acdaaa1805a4fa1814ef2499923",
+    "area_core/__init__.py": "29389c54b1319949738f82a1aa1d8818fec5603c191084f1a880c7034b9bffba",
+    "area_core/attention.py": "0fda854116949001d194e8b5b9fde3ea36a45e8638458fd7afad29feebb5e5dd",
+    "area_core/backend.py": "204e9fafe73481a17887abd3bacce1ba64b33560c1e7ddb86323b68cfab9e5f5",
+    "area_core/bridge.py": "f4885a50754789c3a6b35e60adc6eac2592d3110cb6afae7c770dc9497a512c6",
+    "area_core/schedule.py": "8d9f52852dbc4ac897403123012c25da83e02652c73e9cd1ae8eb5f511721d8c",
+    "area_core/tiling.py": "25835d14c8f520d168035446c27cddc1fbf8ff62a9b2289ef99edeb846e2d0d3",
+    "tests/reference_host.py": "9f15a427622d318d2639d5f560ab0ba9b1f7d29a217aad410806bb9d4124dfc1",
+    "tests/test_comfy_reference.py": "226ca005799be1a6862cbc564bc770be36fe71b399ac19ac7f0ed4bfd69211d4",
+    "tests/test_regressions.py": "22948b2e2eee3ea6f9cd334518d0feb31eed73d89d60eb514a8b5591669b52b8"
+  }
+}

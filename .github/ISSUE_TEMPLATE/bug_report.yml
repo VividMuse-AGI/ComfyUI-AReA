@@ -1,0 +1,22 @@
+name: Bug report / 问题反馈
+description: Report a reproducible issue with this experimental port / 提交可复现问题
+body:
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment / 环境
+      description: ComfyUI version/commit, OS, GPU/VRAM, Python, torch, model filename and quantization format.
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Steps and settings / 复现步骤及参数
+      description: Workflow, dimensions, seeds, steps, sampler, AReA parameters, other active patches; expected and actual behavior.
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Evidence / 证据
+      description: Relevant error log, workflow or paired images. Remove local paths and credentials. Do not upload weights.

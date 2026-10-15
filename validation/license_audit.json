@@ -1,0 +1,34 @@
+{
+  "checked_utc": "2026-10-15T13:03:46.107024+00:00",
+  "status": "passed",
+  "upstream_repository": "https://github.com/KooroshRH/AReA",
+  "upstream_commit": "9e38ec2d8457f2aa7800766e8a22d4960f160c69",
+  "upstream_license_url": "https://github.com/KooroshRH/AReA/blob/9e38ec2d8457f2aa7800766e8a22d4960f160c69/LICENSE",
+  "license_terms_reference": "https://www.apache.org/licenses/LICENSE-2.0",
+  "upstream_license_git_blob_sha1": "261eeb9e9f8b2b4b0d119366dda99c6fd7d35c64",
+  "license_sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+  "license_bytes": 11357,
+  "upstream_root_notice_present": false,
+  "upstream_authors": [
+    "Javad Rajabi",
+    "Koorosh Roohi",
+    "David B. Lindell",
+    "Babak Taati"
+  ],
+  "author_source": "https://github.com/KooroshRH/AReA/blob/9e38ec2d8457f2aa7800766e8a22d4960f160c69/README.md#citation",
+  "modified_upstream_files": [
+    "area_core/attention.py",
+    "area_core/bridge.py",
+    "area_core/schedule.py",
+    "area_core/tiling.py"
+  ],
+  "checks": [
+    "License bytes match the GitHub blob retrieved at the pinned upstream commit.",
+    "Upstream author list matches the pinned README citation and is retained in NOTICE.",
+    "All four modified upstream files carry prominent modification notices.",
+    "NOTICE lists original-to-distributed paths and added adapter/backend/test/release files.",
+    "No upstream NOTICE exists at the checked repository root; this port supplies its own attribution NOTICE.",
+    "ComfyUI source and model weights are not bundled; their licenses remain separate.",
+    "Docs identify this as an independent experimental port without official endorsement."
+  ]
+}

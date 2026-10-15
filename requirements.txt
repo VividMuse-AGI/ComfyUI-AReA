@@ -1,0 +1,4 @@
+# Already present in a normal ComfyUI environment; no diffusers/transformers install required.
+torch>=2.4
+numpy>=1.24
+Pillow>=10

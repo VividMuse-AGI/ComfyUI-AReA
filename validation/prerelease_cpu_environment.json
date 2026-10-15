@@ -1,0 +1,18 @@
+{
+  "started_utc": "2026-10-15T12:50:58.576832+00:00",
+  "ended_utc": "2026-10-15T12:51:06.218790+00:00",
+  "python": "3.12.6",
+  "platform": "Windows",
+  "torch": "2.13.0+cpu",
+  "numpy": "2.5.1",
+  "Pillow": "11.3.0",
+  "einops": "0.8.1",
+  "device": "cpu",
+  "reference_comfy_commit": "ba994879b88d0ebd9950b1e5c1e923d928f216ba",
+  "test_command": "python -B -m unittest discover -s tests -v",
+  "exit_code": 0,
+  "test_count": 27,
+  "status": "passed",
+  "checkpoint_generation_performed": false,
+  "server_started": false
+}

@@ -1,0 +1,89 @@
+{
+  "inference_changes": "Model dropdown values changed to basenames only; reselect installed files after import.",
+  "workflows": [
+    {
+      "file": "workflows/01_Krea_FP8_2K_AReA_ON.json",
+      "source_annotation_sha256": "21a77974b342609af3de83f9f333e43e29679f5b012659e48f08a64d46430f2b",
+      "original_node_titles_preserved": true,
+      "links_and_numeric_sampling_parameters_preserved": true,
+      "notes": 6,
+      "groups": 5
+    },
+    {
+      "file": "workflows/zh-CN/01_Krea_FP8_2K_AReA_ON.json",
+      "source_annotation_sha256": "21a77974b342609af3de83f9f333e43e29679f5b012659e48f08a64d46430f2b",
+      "original_node_titles_preserved": true,
+      "links_and_numeric_sampling_parameters_preserved": true,
+      "notes": 6,
+      "groups": 5
+    },
+    {
+      "file": "workflows/02_Krea_FP8_4K_AReA_ON.json",
+      "source_annotation_sha256": "eec72234454f2e00c34f0e2f4afb13044faa55e8c548713b1c55c3c1a51eac06",
+      "original_node_titles_preserved": true,
+      "links_and_numeric_sampling_parameters_preserved": true,
+      "notes": 6,
+      "groups": 5
+    },
+    {
+      "file": "workflows/zh-CN/02_Krea_FP8_4K_AReA_ON.json",
+      "source_annotation_sha256": "eec72234454f2e00c34f0e2f4afb13044faa55e8c548713b1c55c3c1a51eac06",
+      "original_node_titles_preserved": true,
+      "links_and_numeric_sampling_parameters_preserved": true,
+      "notes": 6,
+      "groups": 5
+    },
+    {
+      "file": "workflows/03_Krea_FP8_4K_AReA_OFF.json",
+      "source_annotation_sha256": "722213547dfe9c1012c8b0348aff87615aa7edabc64dbda431155d96a7703a27",
+      "original_node_titles_preserved": true,
+      "links_and_numeric_sampling_parameters_preserved": true,
+      "notes": 6,
+      "groups": 5
+    },
+    {
+      "file": "workflows/zh-CN/03_Krea_FP8_4K_AReA_OFF.json",
+      "source_annotation_sha256": "722213547dfe9c1012c8b0348aff87615aa7edabc64dbda431155d96a7703a27",
+      "original_node_titles_preserved": true,
+      "links_and_numeric_sampling_parameters_preserved": true,
+      "notes": 6,
+      "groups": 5
+    }
+  ],
+  "final_audit": {
+    "redundant_named_widget_fields_removed": true,
+    "all_public_model_choices_use_basenames": true,
+    "default_titles_numeric_settings_and_executable_links_unchanged": true,
+    "removed_field_counts": [
+      {
+        "workflow": "workflows/01_Krea_FP8_2K_AReA_ON.json",
+        "redundant_fields_removed": 18
+      },
+      {
+        "workflow": "workflows/02_Krea_FP8_4K_AReA_ON.json",
+        "redundant_fields_removed": 5
+      },
+      {
+        "workflow": "workflows/03_Krea_FP8_4K_AReA_OFF.json",
+        "redundant_fields_removed": 5
+      },
+      {
+        "workflow": "workflows/zh-CN/01_Krea_FP8_2K_AReA_ON.json",
+        "redundant_fields_removed": 18
+      },
+      {
+        "workflow": "workflows/zh-CN/02_Krea_FP8_4K_AReA_ON.json",
+        "redundant_fields_removed": 5
+      },
+      {
+        "workflow": "workflows/zh-CN/03_Krea_FP8_4K_AReA_OFF.json",
+        "redundant_fields_removed": 5
+      }
+    ]
+  },
+  "note_style": {
+    "max_lines_per_note": 2,
+    "detailed_parameters_and_test_results": "Kept in README and TESTING; removed from canvas Notes.",
+    "default_titles_parameters_and_links_preserved": true
+  }
+}

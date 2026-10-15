@@ -1,0 +1,74 @@
+{
+  "date": "2026-10-15",
+  "scope": "Historical evidence, normalized for public distribution. No generation rerun.",
+  "transformations": [
+    "Local absolute paths replaced by portable labels or output basenames.",
+    "Windows path separators normalized to forward slashes, including hash-map keys.",
+    "Local test-server URLs replaced by a label.",
+    "Measurements, run IDs, output hashes, and historical pass/fail values retained.",
+    "Unrelated desktop process list omitted from the nvidia-smi environment snapshot; hardware/memory summary retained.",
+    "Historical model selection strings reduced to basenames; measurements and hashes unchanged."
+  ],
+  "historical_files": [
+    {
+      "public_file": "validation/4k28_initial.json",
+      "source_sha256": "29bdfe3771e793e43fc2933b704beed1f4af8b001cf6bf7b02ba1a7dcce4aa5d",
+      "public_sha256": "50dfa7f8104fe02c71482ed61e6e6eaa26763e89d354731af3ed2a57b64849d8",
+      "normalized": true
+    },
+    {
+      "public_file": "validation/4k28_repeat.json",
+      "source_sha256": "494602457c94c79f0ba359c8b5a1cc8211ba90b5343000fda6ca858ef1529e38",
+      "public_sha256": "d8275c255c34412080c58dcda1ee53da65ea0e049ad5713d1a637c786ff9f14a",
+      "normalized": true
+    },
+    {
+      "public_file": "validation/4k_comparison.jpg",
+      "source_sha256": "9d70ccdda31338083584cd1a8550203060211cff28d6c354648ff474c12f138d",
+      "public_sha256": "9d70ccdda31338083584cd1a8550203060211cff28d6c354648ff474c12f138d",
+      "normalized": false
+    },
+    {
+      "public_file": "validation/gpu_4k_smoke.json",
+      "source_sha256": "e9cdc8ec6e63e76c9c9b7ef5016c3e7e4ed954711fe5ee186133ba9c6418ff16",
+      "public_sha256": "d3b2e057fd74f0866359ed108bce3fa547caec80970d3914c6b1139cc2f57ae2",
+      "normalized": true
+    },
+    {
+      "public_file": "validation/gpu_acceptance.json",
+      "source_sha256": "0beae63f09aa49cdf3c3c6810a621ceb35b1fcc4a50507443c53e98dc772a208",
+      "public_sha256": "61ef6ec27b242e0e004c537052561f9338b4dd3235dd6d689b6e85411659d1f1",
+      "normalized": true
+    },
+    {
+      "public_file": "validation/local-regressions.txt",
+      "source_sha256": "5350463111fd80a6599ed67e49d0f1fcd6afd8ffaf3d73a5006f96c626c76c5f",
+      "public_sha256": "5350463111fd80a6599ed67e49d0f1fcd6afd8ffaf3d73a5006f96c626c76c5f",
+      "normalized": false
+    },
+    {
+      "public_file": "validation/local_host_validation.json",
+      "source_sha256": "8fd050ebc596e0652c27619a136f3eeb367355df5ea239fc90aa2c1d096190b8",
+      "public_sha256": "15adf89cf36dd7a855dd06c28b8749ae2f7145159b5145340b467f0b2f300ca5",
+      "normalized": true
+    },
+    {
+      "public_file": "validation/local_host_validation_cuda.json",
+      "source_sha256": "75562171c2705ddc6e25434ec41a439fa723adb042349db8a9ff49fdb44069fb",
+      "public_sha256": "f9473eba8639dd210a70bac34e61742527fe9f33d548a90405b0169aafc41ce9",
+      "normalized": true
+    },
+    {
+      "public_file": "validation/png_validation.json",
+      "source_sha256": "840ff66890ba3d4c565e312f02d92adf45d29753ddbdf96aa750d4a15031e8f5",
+      "public_sha256": "a0fe8cbbdf880bca6ae850b8e2a623f47b55af03523a312e2893f387d3e570db",
+      "normalized": true
+    },
+    {
+      "public_file": "validation/historical-regressions.txt",
+      "source_sha256": "9d51e98c8cb4d9352a0e0f11ff99c804c982c54d3b2a8f195451c0c46ba32fc9",
+      "public_sha256": "9d51e98c8cb4d9352a0e0f11ff99c804c982c54d3b2a8f195451c0c46ba32fc9",
+      "normalized": false
+    }
+  ]
+}

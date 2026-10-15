@@ -1,0 +1,288 @@
+{
+  "date": "2026-10-15",
+  "historical_node_loading_and_2k_open": {
+    "nodeRegistration": {
+      "AReAFluxPatch": true,
+      "AReASaveImage": true
+    },
+    "modelEnumeration": {
+      "diffusion": true,
+      "clipL": true,
+      "t5": true,
+      "vae": true
+    },
+    "workflowPath": "<LOCAL_FILE>/01_Krea_FP8_2K_AReA_ON.json",
+    "frontend": {
+      "nodes": [
+        {
+          "id": "1",
+          "type": "UNETLoader",
+          "widgets": [
+            {
+              "name": "unet_name",
+              "value": "flux1-krea-dev_fp8_scaled.safetensors"
+            },
+            {
+              "name": "weight_dtype",
+              "value": "default"
+            }
+          ]
+        },
+        {
+          "id": "2",
+          "type": "ModelSamplingFlux",
+          "widgets": [
+            {
+              "name": "max_shift",
+              "value": 1.15
+            },
+            {
+              "name": "base_shift",
+              "value": 1.15
+            },
+            {
+              "name": "width",
+              "value": 2048
+            },
+            {
+              "name": "height",
+              "value": 2048
+            }
+          ]
+        },
+        {
+          "id": "3",
+          "type": "AReAFluxPatch",
+          "widgets": [
+            {
+              "name": "enabled",
+              "value": true
+            },
+            {
+              "name": "phase1_steps",
+              "value": 0
+            },
+            {
+              "name": "pooling",
+              "value": "subsample"
+            },
+            {
+              "name": "halo",
+              "value": 8
+            },
+            {
+              "name": "bridge_ratio",
+              "value": 0.5
+            },
+            {
+              "name": "seed",
+              "value": 0
+            },
+            {
+              "name": "window_batch_size",
+              "value": 1
+            }
+          ]
+        },
+        {
+          "id": "4",
+          "type": "DualCLIPLoader",
+          "widgets": [
+            {
+              "name": "clip_name1",
+              "value": "clip_l.safetensors"
+            },
+            {
+              "name": "clip_name2",
+              "value": "t5xxl_fp8_e4m3fn.safetensors"
+            },
+            {
+              "name": "type",
+              "value": "flux"
+            },
+            {
+              "name": "device",
+              "value": "default"
+            }
+          ]
+        },
+        {
+          "id": "5",
+          "type": "CLIPTextEncode",
+          "widgets": [
+            {
+              "name": "text",
+              "value": "A natural editorial photograph of an adult woman in a linen jacket standing beside a cafe window, soft daylight, realistic skin texture, relaxed expression, detailed fabric, coherent anatomy, a small glass bottle on the table, restrained colors, subtle film grain."
+            }
+          ]
+        },
+        {
+          "id": "6",
+          "type": "FluxGuidance",
+          "widgets": [
+            {
+              "name": "guidance",
+              "value": 4.5
+            }
+          ]
+        },
+        {
+          "id": "7",
+          "type": "CLIPTextEncode",
+          "widgets": [
+            {
+              "name": "text",
+              "value": ""
+            }
+          ]
+        },
+        {
+          "id": "8",
+          "type": "EmptySD3LatentImage",
+          "widgets": [
+            {
+              "name": "width",
+              "value": 2048
+            },
+            {
+              "name": "height",
+              "value": 2048
+            },
+            {
+              "name": "batch_size",
+              "value": 1
+            }
+          ]
+        },
+        {
+          "id": "9",
+          "type": "KSampler",
+          "widgets": [
+            {
+              "name": "seed",
+              "value": 0
+            },
+            {
+              "name": "control_after_generate",
+              "value": "fixed"
+            },
+            {
+              "name": "steps",
+              "value": 28
+            },
+            {
+              "name": "cfg",
+              "value": 1
+            },
+            {
+              "name": "sampler_name",
+              "value": "euler"
+            },
+            {
+              "name": "scheduler",
+              "value": "simple"
+            },
+            {
+              "name": "denoise",
+              "value": 1
+            }
+          ]
+        },
+        {
+          "id": "10",
+          "type": "VAELoader",
+          "widgets": [
+            {
+              "name": "vae_name",
+              "value": "ae.safetensors"
+            }
+          ]
+        },
+        {
+          "id": "11",
+          "type": "VAEDecodeTiled",
+          "widgets": [
+            {
+              "name": "tile_size",
+              "value": 512
+            },
+            {
+              "name": "overlap",
+              "value": 64
+            },
+            {
+              "name": "temporal_size",
+              "value": 64
+            },
+            {
+              "name": "temporal_overlap",
+              "value": 8
+            }
+          ]
+        },
+        {
+          "id": "12",
+          "type": "AReASaveImage",
+          "widgets": [
+            {
+              "name": "filename_prefix",
+              "value": "AReA_Krea_2K_ON"
+            }
+          ]
+        },
+        {
+          "id": "13",
+          "type": "Note",
+          "widgets": [
+            {
+              "name": "text",
+              "value": "本机 FP8 模型命名；其他环境请重新选择加载器文件。\n2048×2048 / batch=1 / 28步，AReA 开启。\nEuler/simple，CFG=1，guidance=4.5，shift固定1.15；phase1_steps=0 自动8+20。\n同种子A/B请固定KSampler seed与AReA seed；改尺寸时同步修改两个尺寸节点。\n本机Krea FP8：2K/28步完整出图通过；4K重复两对采样约1.81×加速，未稳定降低显存。\n仅有窗边人像画质观察，手部/白点仍有问题；多题材测试未完成。详情见README和TESTING。"
+            }
+          ]
+        }
+      ],
+      "missing": []
+    },
+    "queueBefore": {
+      "queue_running": [],
+      "queue_pending": []
+    },
+    "queueAfter": {
+      "queue_running": [],
+      "queue_pending": []
+    },
+    "historyBefore": [],
+    "historyAfter": []
+  },
+  "historical_2k_annotation_check": {
+    "audit": "<LOCAL_FILE>/annotations_2026-10-15T11-55-31-801Z",
+    "originalNodes": 13,
+    "annotatedNodes": 18,
+    "notesAdded": 5,
+    "originalTitlesUnchanged": true,
+    "executablePromptUnchanged": true,
+    "missingNodes": [],
+    "queueBefore": {
+      "queue_running": [],
+      "queue_pending": []
+    },
+    "queueAfter": {
+      "queue_running": [],
+      "queue_pending": []
+    },
+    "historyBefore": [],
+    "historyAfter": []
+  },
+  "historical_4k_file_check": {
+    "workflows": [
+      "02_Krea_FP8_4K_AReA_ON",
+      "03_Krea_FP8_4K_AReA_OFF"
+    ],
+    "notes_added_per_workflow": 5,
+    "groups_per_workflow": 5,
+    "default_titles_sampling_parameters_and_links_preserved": true,
+    "desktop_and_workflow_library_copies_matched": true,
+    "generated_images": 0
+  },
+  "public_workflow_status": "Portable copies checked statically; public copies have not been reimported into a live browser or used to generate images."
+}

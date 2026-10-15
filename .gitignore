@@ -1,0 +1,8 @@
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+.comfy-reference/
+outputs/
+dist/
+*.log

@@ -1,0 +1,7 @@
+2026-10-15 local rerun after ComfyUI kernel integration
+Python 3.12, torch 2.13.0+cpu; AREA_COMFY_SOURCE=actual ComfyUI v0.40.0
+Ran 27 tests in 3.144s
+OK
+
+Real host CPU and CUDA ModelPatcher tests additionally passed using Python 3.11.9 / torch 2.9.1+cu130.
+See local_host_validation.json and local_host_validation_cuda.json.

@@ -1,0 +1,28 @@
+ComfyUI-AReA, experimental independent ComfyUI port, 2026.
+Not an official release by the AReA authors or the ComfyUI team.
+
+Contains modified source from:
+AReA: Adaptive Receptive-Field Attention for Efficient High-Resolution Diffusion Transformers
+Javad Rajabi, Koorosh Roohi, David B. Lindell, Babak Taati
+https://github.com/KooroshRH/AReA
+Commit: 9e38ec2d8457f2aa7800766e8a22d4960f160c69
+License: Apache License 2.0 (included in LICENSE)
+
+Modified upstream files (upstream path -> distributed path):
+  area/attention.py -> area_core/attention.py
+  area/bridge.py -> area_core/bridge.py
+  area/schedule.py -> area_core/schedule.py
+  area/tiling.py -> area_core/tiling.py
+tiling.py uses ComfyUI's outer inference context and is invoked per image.
+Changes include ComfyUI backend dispatch, independent batch statistics/layouts,
+bounded window batching, bridge token bounds and phase/pooling validation.
+adapter.py, nodes.py, saving.py, area_core/backend.py, area_core/__init__.py,
+tests, release tools, documentation and annotated workflows are additions
+for this port. The added source is also distributed under Apache-2.0.
+
+ComfyUI API reference used during implementation:
+https://github.com/Comfy-Org/ComfyUI
+Commit: ba994879b88d0ebd9950b1e5c1e923d928f216ba
+ComfyUI source is not bundled. Development fixtures load a separate
+ComfyUI checkout at test time; that checkout retains its own license.
+Model weights are not distributed. Their licenses remain separate.

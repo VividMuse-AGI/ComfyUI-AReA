@@ -1,0 +1,18 @@
+{
+  "status": "passed",
+  "version": "0.1",
+  "checks": [
+    "Python syntax, JSON parsing, portable paths and Unicode",
+    "Pinned upstream license, author attribution and modified-file notices",
+    "Local Markdown links resolve within the repository",
+    "Production and existing test Python hashes match tested baseline",
+    "Normalized historical evidence hashes match provenance index",
+    "Six UI/API graphs, default titles, Notes/groups, links, widgets and bilingual/ON-OFF parity",
+    "Recorded sample counts, medians and per-run CSV agree with historical JSON"
+  ],
+  "annotated_ui_workflows": 6,
+  "matching_api_prompts": 6,
+  "default_node_names_preserved": true,
+  "gpu_generation_performed": false,
+  "network_or_server_requests_performed": false
+}

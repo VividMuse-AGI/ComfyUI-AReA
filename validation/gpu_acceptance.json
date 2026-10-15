@@ -1,0 +1,120 @@
+{
+  "model": "flux1-krea-dev_fp8_scaled.safetensors",
+  "server": "<LOCAL_TEST_SERVER>",
+  "tests": [
+    {
+      "label": "smoke_1280_2steps",
+      "prompt_id": "2d3c6a58-fce3-44c5-95c8-3645e501d941",
+      "width": 1280,
+      "height": 1280,
+      "steps": 2,
+      "peak_observed_total_vram_mib": 15530,
+      "elapsed_seconds_including_load": 24.58,
+      "status": {
+        "status_str": "success",
+        "completed": true,
+        "messages": [
+          [
+            "execution_start",
+            {
+              "prompt_id": "2d3c6a58-fce3-44c5-95c8-3645e501d941",
+              "timestamp": 1792048140052
+            }
+          ],
+          [
+            "execution_cached",
+            {
+              "nodes": [],
+              "prompt_id": "2d3c6a58-fce3-44c5-95c8-3645e501d941",
+              "timestamp": 1792048140054
+            }
+          ],
+          [
+            "execution_success",
+            {
+              "prompt_id": "2d3c6a58-fce3-44c5-95c8-3645e501d941",
+              "timestamp": 1792048161957
+            }
+          ]
+        ]
+      },
+      "outputs": {
+        "12": {
+          "images": [
+            {
+              "filename": "AReA_smoke_1280_2steps_20261015T070921738754Z_8a1d58d7f92846c284155ebb75e53293.png",
+              "subfolder": "",
+              "type": "output",
+              "metadata": {
+                "kind": "image",
+                "width": 1280,
+                "height": 1280
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "label": "krea_2048_28steps",
+      "prompt_id": "25f61e65-437c-4d0f-8009-cb763f575f4e",
+      "width": 2048,
+      "height": 2048,
+      "steps": 28,
+      "peak_observed_total_vram_mib": 15348,
+      "elapsed_seconds_including_load": 250.98,
+      "status": {
+        "status_str": "success",
+        "completed": true,
+        "messages": [
+          [
+            "execution_start",
+            {
+              "prompt_id": "25f61e65-437c-4d0f-8009-cb763f575f4e",
+              "timestamp": 1792048164622
+            }
+          ],
+          [
+            "execution_cached",
+            {
+              "nodes": [
+                "1",
+                "4",
+                "5",
+                "6",
+                "7",
+                "10"
+              ],
+              "prompt_id": "25f61e65-437c-4d0f-8009-cb763f575f4e",
+              "timestamp": 1792048164624
+            }
+          ],
+          [
+            "execution_success",
+            {
+              "prompt_id": "25f61e65-437c-4d0f-8009-cb763f575f4e",
+              "timestamp": 1792048412798
+            }
+          ]
+        ]
+      },
+      "outputs": {
+        "12": {
+          "images": [
+            {
+              "filename": "AReA_krea_2048_28steps_20261015T071332181975Z_17f0074a85414591818a17f3e5c29a5d.png",
+              "subfolder": "",
+              "type": "output",
+              "metadata": {
+                "kind": "image",
+                "width": 2048,
+                "height": 2048
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "status": "passed"
+}

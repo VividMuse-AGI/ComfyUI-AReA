@@ -1,0 +1,335 @@
+{
+  "session_id": "P0_P1_early_20261015T090816Z_bc5e9675",
+  "status": "stopped_by_user",
+  "summary": {
+    "state": "stopped_by_user",
+    "completed": 4,
+    "metrics_by_mode": {
+      "P0_off": {
+        "n": 2,
+        "sampling_median_seconds": 958.2399519499995,
+        "sampling_min_seconds": 957.6535674999977,
+        "sampling_max_seconds": 958.8263364000013,
+        "workflow_median_seconds": 981.482,
+        "nvml_sampling_median_gib": 14.522253036499023,
+        "nvml_all_peak_max_gib": 14.556804656982422,
+        "torch_allocated_median_gib": 5.782458977773786,
+        "minimum_available_ram_gib": 2.4590530395507812
+      },
+      "P0_on": {
+        "n": 2,
+        "sampling_median_seconds": 528.6649219999999,
+        "sampling_min_seconds": 528.1154619000008,
+        "sampling_max_seconds": 529.214382099999,
+        "workflow_median_seconds": 551.7090000000001,
+        "nvml_sampling_median_gib": 14.526424407958984,
+        "nvml_all_peak_max_gib": 15.200496673583984,
+        "torch_allocated_median_gib": 6.747433429583907,
+        "minimum_available_ram_gib": 2.086944580078125
+      }
+    },
+    "pairs": {
+      "P0_repeat1": {
+        "sampling_speedup": 1.8155619472878755,
+        "nvml_sampling_difference_mib": -650.59765625,
+        "torch_allocated_difference_mib": 988.1338386535645
+      },
+      "P0_repeat2": {
+        "sampling_speedup": 1.8095758541177398,
+        "nvml_sampling_difference_mib": 659.140625,
+        "torch_allocated_difference_mib": 988.1338386535645
+      }
+    },
+    "p0_reproducibility": {
+      "off": {
+        "distinct_latent_hashes": 1,
+        "distinct_pixel_hashes": 1,
+        "sampling_cv": 0.0008654125099560523
+      },
+      "on": {
+        "distinct_latent_hashes": 1,
+        "distinct_pixel_hashes": 1,
+        "sampling_cv": 0.0014698420361652774
+      }
+    },
+    "median_paired_sampling_speedup": 1.8125689007028076,
+    "quality_review": {
+      "status": "stopped_by_user",
+      "coverage": {
+        "P0_completed": 4,
+        "P0_planned": 6,
+        "P1_completed": 0,
+        "P1_planned": 12,
+        "cancelled_partial_images_excluded": 1
+      },
+      "quality_observations": [
+        "同模式两次运行的latent哈希及最终像素哈希完全一致；两次重复不增加画质场景覆盖。",
+        "已查看的原始窗边提示词对照中，ON形成单主体和清晰瓶子，OFF有相似人物/反射及大面积前景遮挡；ON手部和细碎白点仍有问题。",
+        "人物身份和年龄感随注意力变化，本组不能作为同人物的细节保真证明。",
+        "尚未进行手部/计数多种子P1测试，未形成新题材盲评结论。"
+      ],
+      "performance_observations": [
+        "两对采样加速比分别约1.816和1.810，中位约1.813。",
+        "整卡采样区间峰值在第一对ON比OFF低约651MiB，第二对高约659MiB，尚无稳定节省显存的证据。",
+        "PyTorch分配峰值ON两次均比OFF高约988MiB；与整卡占用的统计口径不同。"
+      ],
+      "decision": "按用户要求停止剩余测试，本次不继续扩测；保留当前实验版及已完成原图、日志和校验值。",
+      "review_method": "已有图像的单人视觉复核与重复输出哈希核对；未执行多评审盲评。"
+    }
+  },
+  "model_hashes": {
+    "flux1-krea-dev_fp8_scaled.safetensors": {
+      "bytes": 11904639672,
+      "sha256": "b17a8c21703c4d6ffb0e300dd920eff3cfd35c9a72a1abaf107e3788e408b8d8"
+    },
+    "clip_l.safetensors": {
+      "bytes": 246144152,
+      "sha256": "660c6f5b1abae9dc498ac2d21e1347d2abdb0cf6c0c0c8576cd796491d9a6cdd"
+    },
+    "t5xxl_fp8_e4m3fn.safetensors": {
+      "bytes": 4893934904,
+      "sha256": "7d330da4816157540d6bb7838bf63a0f02f573fc48ca4d8de34bb0cbfd514f09"
+    },
+    "ae.safetensors": {
+      "bytes": 335304388,
+      "sha256": "afc8e28272cd15db3919bacdb6918ce9c1ed22e96cb12c4d5ed0fba823529e38"
+    }
+  },
+  "package_python_sha256": {
+    "adapter.py": "56115e31190e73c921dc14d9a408f24e480dd5a97292ef1a77d0d24ef3691282",
+    "nodes.py": "ce994f9ea4131c45a7211bfc0b28be345cde1942ce31555770927d58c6db828f",
+    "saving.py": "b5444349da377b5a6aa006241ee7e4fac97a6acdaaa1805a4fa1814ef2499923",
+    "__init__.py": "4c0f96b0f0006df5a559d09d44b8d521a32d7992383223310b5ba2a3f88e3e42",
+    "area_core/attention.py": "0fda854116949001d194e8b5b9fde3ea36a45e8638458fd7afad29feebb5e5dd",
+    "area_core/backend.py": "204e9fafe73481a17887abd3bacce1ba64b33560c1e7ddb86323b68cfab9e5f5",
+    "area_core/bridge.py": "f4885a50754789c3a6b35e60adc6eac2592d3110cb6afae7c770dc9497a512c6",
+    "area_core/schedule.py": "8d9f52852dbc4ac897403123012c25da83e02652c73e9cd1ae8eb5f511721d8c",
+    "area_core/tiling.py": "25835d14c8f520d168035446c27cddc1fbf8ff62a9b2289ef99edeb846e2d0d3",
+    "area_core/__init__.py": "29389c54b1319949738f82a1aa1d8818fec5603c191084f1a880c7034b9bffba",
+    "tests/reference_host.py": "9f15a427622d318d2639d5f560ab0ba9b1f7d29a217aad410806bb9d4124dfc1",
+    "tests/test_comfy_reference.py": "226ca005799be1a6862cbc564bc770be36fe71b399ac19ac7f0ed4bfd69211d4",
+    "tests/test_regressions.py": "22948b2e2eee3ea6f9cd334518d0feb31eed73d89d60eb514a8b5591669b52b8"
+  },
+  "prompt": "A natural editorial photograph of an adult woman in a linen jacket standing beside a cafe window, soft daylight, realistic skin texture, relaxed expression, detailed fabric, coherent anatomy, a small glass bottle on the table, restrained colors, subtle film grain.",
+  "completed_runs": [
+    {
+      "run_id": "P0_repeat1_off",
+      "job": {
+        "run_id": "P0_repeat1_off",
+        "pair_id": "P0_repeat1",
+        "stage": "P0",
+        "prompt_id": "cafe",
+        "seed": 0,
+        "area_seed": 0,
+        "enabled": false,
+        "width": 4096,
+        "height": 4096,
+        "steps": 28,
+        "status": "planned",
+        "process_mode": "fresh"
+      },
+      "status": "success",
+      "workflow_seconds": 981.431,
+      "sampler": {
+        "run_id": "P0_repeat1_off_4737cc14",
+        "seed": 0,
+        "steps": 28,
+        "sampler_start_epoch": 1792055357.74647,
+        "denoise_start_epoch": 1792055357.9734042,
+        "denoise_seconds": 958.8263364000013,
+        "denoise_end_epoch": 1792056316.7995653,
+        "status": "success",
+        "sampler_node_seconds": 959.0573986000018,
+        "sampler_end_epoch": 1792056316.8040583,
+        "torch_peak_allocated_bytes": 6208868050,
+        "torch_peak_reserved_bytes": 8455716864,
+        "latent_sha256": "3fca9987de02d59c5f365efc7c03f62b106813c175c1f211dab7cb602bf682e9",
+        "latent_finite": true
+      },
+      "decode": {
+        "run_id": "P0_repeat1_off_4737cc14",
+        "decode_start_epoch": 1792056316.91177,
+        "decode_seconds": 15.165077500001644,
+        "decode_end_epoch": 1792056332.076754
+      },
+      "gpu_baseline_bytes": 1475608576,
+      "gpu_sampling_peak_bytes": 15556050944,
+      "gpu_whole_workflow_peak_bytes": 15556050944,
+      "min_available_ram_bytes": 3645894656,
+      "server_rss_peak_bytes": 12717588480,
+      "telemetry_max_gap_seconds": 0.34658312797546387,
+      "pixel_sha256": "c8dde60d166bfb131455d5bf52d011e8d180cd10e73c7cb8685833af70f5b4fb",
+      "image_sha256": "fd8f7509dbba63623639472fd0e7d76ad379973ac8392904373766e2eb53bcdf",
+      "cached_nodes": []
+    },
+    {
+      "run_id": "P0_repeat1_on",
+      "job": {
+        "run_id": "P0_repeat1_on",
+        "pair_id": "P0_repeat1",
+        "stage": "P0",
+        "prompt_id": "cafe",
+        "seed": 0,
+        "area_seed": 0,
+        "enabled": true,
+        "width": 4096,
+        "height": 4096,
+        "steps": 28,
+        "status": "planned",
+        "process_mode": "fresh"
+      },
+      "status": "success",
+      "workflow_seconds": 551.227,
+      "sampler": {
+        "run_id": "P0_repeat1_on_0670411c",
+        "seed": 0,
+        "steps": 28,
+        "sampler_start_epoch": 1792056357.3442407,
+        "denoise_start_epoch": 1792056357.541302,
+        "denoise_seconds": 528.1154619000008,
+        "denoise_end_epoch": 1792056885.6545775,
+        "status": "success",
+        "sampler_node_seconds": 528.3173599000002,
+        "sampler_end_epoch": 1792056885.6630902,
+        "torch_peak_allocated_bytes": 7245001478,
+        "torch_peak_reserved_bytes": 10536091648,
+        "latent_sha256": "b66baca3bcd20f16514d0e51167eeb48f3ce2c7431cdf0ae769edfb7f2707ce9",
+        "latent_finite": true
+      },
+      "decode": {
+        "run_id": "P0_repeat1_on_0670411c",
+        "decode_start_epoch": 1792056885.8560176,
+        "decode_seconds": 15.25120340000285,
+        "decode_end_epoch": 1792056901.105161
+      },
+      "gpu_baseline_bytes": 1367011328,
+      "gpu_sampling_peak_bytes": 14873849856,
+      "gpu_whole_workflow_peak_bytes": 14873849856,
+      "min_available_ram_bytes": 2240839680,
+      "server_rss_peak_bytes": 14751473664,
+      "telemetry_max_gap_seconds": 0.33313846588134766,
+      "pixel_sha256": "89b29198d0247acbaab69c19c2760cad86cb3fc1ac9900707340d70674f8cc66",
+      "image_sha256": "82f1aa43b8c87bedd68aa7b9cd97467c3acc43377fb04e800ab58d92a987d4b7",
+      "cached_nodes": []
+    },
+    {
+      "run_id": "P0_repeat2_on",
+      "job": {
+        "run_id": "P0_repeat2_on",
+        "pair_id": "P0_repeat2",
+        "stage": "P0",
+        "prompt_id": "cafe",
+        "seed": 0,
+        "area_seed": 0,
+        "enabled": true,
+        "width": 4096,
+        "height": 4096,
+        "steps": 28,
+        "status": "planned",
+        "process_mode": "fresh"
+      },
+      "status": "success",
+      "workflow_seconds": 552.191,
+      "sampler": {
+        "run_id": "P0_repeat2_on_c3901a6b",
+        "seed": 0,
+        "steps": 28,
+        "sampler_start_epoch": 1792056930.2769752,
+        "denoise_start_epoch": 1792056930.496726,
+        "denoise_seconds": 529.214382099999,
+        "denoise_end_epoch": 1792057459.7093217,
+        "status": "success",
+        "sampler_node_seconds": 529.4402429000038,
+        "sampler_end_epoch": 1792057459.716176,
+        "torch_peak_allocated_bytes": 7245001478,
+        "torch_peak_reserved_bytes": 10502537216,
+        "latent_sha256": "b66baca3bcd20f16514d0e51167eeb48f3ce2c7431cdf0ae769edfb7f2707ce9",
+        "latent_finite": true
+      },
+      "decode": {
+        "run_id": "P0_repeat2_on_c3901a6b",
+        "decode_start_epoch": 1792057459.834419,
+        "decode_seconds": 15.155933599999116,
+        "decode_end_epoch": 1792057474.9900155
+      },
+      "gpu_baseline_bytes": 1351217152,
+      "gpu_sampling_peak_bytes": 16321409024,
+      "gpu_whole_workflow_peak_bytes": 16321409024,
+      "min_available_ram_bytes": 3026210816,
+      "server_rss_peak_bytes": 14751903744,
+      "telemetry_max_gap_seconds": 0.3696019649505615,
+      "pixel_sha256": "89b29198d0247acbaab69c19c2760cad86cb3fc1ac9900707340d70674f8cc66",
+      "image_sha256": "ebcf72b05b16a9ef7196b98751235b269d001d7b6ace4b1815e1e0888776d310",
+      "cached_nodes": []
+    },
+    {
+      "run_id": "P0_repeat2_off",
+      "job": {
+        "run_id": "P0_repeat2_off",
+        "pair_id": "P0_repeat2",
+        "stage": "P0",
+        "prompt_id": "cafe",
+        "seed": 0,
+        "area_seed": 0,
+        "enabled": false,
+        "width": 4096,
+        "height": 4096,
+        "steps": 28,
+        "status": "planned",
+        "process_mode": "fresh"
+      },
+      "status": "success",
+      "workflow_seconds": 981.533,
+      "sampler": {
+        "run_id": "P0_repeat2_off_aa0036f8",
+        "seed": 0,
+        "steps": 28,
+        "sampler_start_epoch": 1792057499.5859473,
+        "denoise_start_epoch": 1792057499.7841973,
+        "denoise_seconds": 957.6535674999977,
+        "denoise_end_epoch": 1792058457.4386845,
+        "status": "success",
+        "sampler_node_seconds": 957.8590482,
+        "sampler_end_epoch": 1792058457.4452217,
+        "torch_peak_allocated_bytes": 6208868050,
+        "torch_peak_reserved_bytes": 9328132096,
+        "latent_sha256": "3fca9987de02d59c5f365efc7c03f62b106813c175c1f211dab7cb602bf682e9",
+        "latent_finite": true
+      },
+      "decode": {
+        "run_id": "P0_repeat2_off_aa0036f8",
+        "decode_start_epoch": 1792058457.6047947,
+        "decode_seconds": 15.964970200002426,
+        "decode_end_epoch": 1792058473.5696187
+      },
+      "gpu_baseline_bytes": 1366179840,
+      "gpu_sampling_peak_bytes": 15630249984,
+      "gpu_whole_workflow_peak_bytes": 15630249984,
+      "min_available_ram_bytes": 2640388096,
+      "server_rss_peak_bytes": 13508616192,
+      "telemetry_max_gap_seconds": 0.4544708728790283,
+      "pixel_sha256": "c8dde60d166bfb131455d5bf52d011e8d180cd10e73c7cb8685833af70f5b4fb",
+      "image_sha256": "31daf8337ab6663286484849acfd5e9506b1b418cfe84231d07c6c2ecb1ff07f",
+      "cached_nodes": []
+    }
+  ],
+  "preflight": {
+    "standard_latent_sha256": "f6e8ced1728c0e8e872d8b2d09961885bfce83cc95282f5c2a7967181e22e355",
+    "observed_latent_sha256": "f6e8ced1728c0e8e872d8b2d09961885bfce83cc95282f5c2a7967181e22e355",
+    "exact_equal": true,
+    "max_abs_difference": 0.0,
+    "finite": true
+  },
+  "cancelled_partial_excluded": [
+    "P0_repeat3_off"
+  ],
+  "P1_completed": 0,
+  "source_environment": {
+    "python_version": "Python 3.11.9",
+    "nvidia_smi": "Thu Oct 15 17:08:16 2026       \n+-----------------------------------------------------------------------------------------+\n| NVIDIA-SMI 610.88                 KMD Version: 610.88        CUDA UMD Version: 13.3     |\n+-----------------------------------------+------------------------+----------------------+\n| GPU  Name                  Driver-Model | Bus-Id          Disp.A | Volatile Uncorr. ECC |\n| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |\n|                                         |                        |               MIG M. |\n|=========================================+========================+======================|\n|   0  NVIDIA GeForce RTX 5080      WDDM  |   00000000:01:00.0 Off |                  N/A |\n|  0%   41C    P0             48W /  360W |     826MiB /  16303MiB |      6%      Default |\n|                                         |                        |                  N/A |\n+-----------------------------------------+------------------------+----------------------+\n\n[Unrelated desktop process list omitted for public distribution.]\n",
+    "system_ram_bytes": 34015010816,
+    "runner_sha256": "f0a112903cc0b12f29ec2bccbdcf763fa8766ff83244306b961bc3854e529050",
+    "observer_sha256": "e969690596ef1dd62528d7bf91b939f7507115efbaa4ed0a215ed7a017ebc56b",
+    "comfy_git_commit": "3541246a9c997f4b8c32f9f88f3c985d02021c79"
+  }
+}

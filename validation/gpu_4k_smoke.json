@@ -1,0 +1,223 @@
+{
+  "purpose": "4K shape/memory/decode smoke; 2 steps are not a quality test",
+  "prompt_id": "84db4e0d-fe66-4b50-ae95-7e021c1c888f",
+  "elapsed_seconds_including_load": 116.97,
+  "peak_observed_total_vram_mib": 15871,
+  "history": {
+    "prompt": [
+      2,
+      "84db4e0d-fe66-4b50-ae95-7e021c1c888f",
+      {
+        "1": {
+          "class_type": "UNETLoader",
+          "inputs": {
+            "unet_name": "flux1-krea-dev_fp8_scaled.safetensors",
+            "weight_dtype": "default"
+          }
+        },
+        "2": {
+          "class_type": "ModelSamplingFlux",
+          "inputs": {
+            "model": [
+              "1",
+              0
+            ],
+            "max_shift": 1.15,
+            "base_shift": 1.15,
+            "width": 4096,
+            "height": 4096
+          }
+        },
+        "3": {
+          "class_type": "AReAFluxPatch",
+          "inputs": {
+            "model": [
+              "2",
+              0
+            ],
+            "enabled": true,
+            "phase1_steps": 0,
+            "pooling": "subsample",
+            "halo": 8,
+            "bridge_ratio": 0.5,
+            "seed": 0,
+            "window_batch_size": 1
+          }
+        },
+        "4": {
+          "class_type": "DualCLIPLoader",
+          "inputs": {
+            "clip_name1": "clip_l.safetensors",
+            "clip_name2": "t5xxl_fp8_e4m3fn.safetensors",
+            "type": "flux",
+            "device": "default"
+          }
+        },
+        "5": {
+          "class_type": "CLIPTextEncode",
+          "inputs": {
+            "clip": [
+              "4",
+              0
+            ],
+            "text": "A natural editorial photograph of an adult woman in a linen jacket standing beside a cafe window, soft daylight, realistic skin texture, relaxed expression, detailed fabric, coherent anatomy, a small glass bottle on the table, restrained colors, subtle film grain."
+          }
+        },
+        "6": {
+          "class_type": "FluxGuidance",
+          "inputs": {
+            "conditioning": [
+              "5",
+              0
+            ],
+            "guidance": 4.5
+          }
+        },
+        "7": {
+          "class_type": "CLIPTextEncode",
+          "inputs": {
+            "clip": [
+              "4",
+              0
+            ],
+            "text": ""
+          }
+        },
+        "8": {
+          "class_type": "EmptySD3LatentImage",
+          "inputs": {
+            "width": 4096,
+            "height": 4096,
+            "batch_size": 1
+          }
+        },
+        "9": {
+          "class_type": "KSampler",
+          "inputs": {
+            "model": [
+              "3",
+              0
+            ],
+            "positive": [
+              "6",
+              0
+            ],
+            "negative": [
+              "7",
+              0
+            ],
+            "latent_image": [
+              "8",
+              0
+            ],
+            "seed": 0,
+            "steps": 2,
+            "cfg": 1.0,
+            "sampler_name": "euler",
+            "scheduler": "simple",
+            "denoise": 1.0
+          }
+        },
+        "10": {
+          "class_type": "VAELoader",
+          "inputs": {
+            "vae_name": "ae.safetensors"
+          }
+        },
+        "11": {
+          "class_type": "VAEDecodeTiled",
+          "inputs": {
+            "samples": [
+              "9",
+              0
+            ],
+            "vae": [
+              "10",
+              0
+            ],
+            "tile_size": 512,
+            "overlap": 64,
+            "temporal_size": 64,
+            "temporal_overlap": 8
+          }
+        },
+        "12": {
+          "class_type": "AReASaveImage",
+          "inputs": {
+            "images": [
+              "11",
+              0
+            ],
+            "filename_prefix": "AReA_4K_2step_smoke_NOT_quality"
+          }
+        }
+      },
+      {
+        "client_id": "area-local-4k-smoke",
+        "create_time": 1792048415874
+      },
+      [
+        "12"
+      ]
+    ],
+    "outputs": {
+      "12": {
+        "images": [
+          {
+            "filename": "AReA_4K_2step_smoke_NOT_quality_20261015T071528902074Z_14d2ad91df854284a5c987710aa5b0f4.png",
+            "subfolder": "",
+            "type": "output",
+            "metadata": {
+              "kind": "image",
+              "width": 4096,
+              "height": 4096
+            }
+          }
+        ]
+      }
+    },
+    "status": {
+      "status_str": "success",
+      "completed": true,
+      "messages": [
+        [
+          "execution_start",
+          {
+            "prompt_id": "84db4e0d-fe66-4b50-ae95-7e021c1c888f",
+            "timestamp": 1792048415874
+          }
+        ],
+        [
+          "execution_cached",
+          {
+            "nodes": [
+              "1",
+              "4",
+              "5",
+              "6",
+              "7",
+              "10"
+            ],
+            "prompt_id": "84db4e0d-fe66-4b50-ae95-7e021c1c888f",
+            "timestamp": 1792048415874
+          }
+        ],
+        [
+          "execution_success",
+          {
+            "prompt_id": "84db4e0d-fe66-4b50-ae95-7e021c1c888f",
+            "timestamp": 1792048531527
+          }
+        ]
+      ]
+    },
+    "meta": {
+      "12": {
+        "node_id": "12",
+        "display_node": "12",
+        "parent_node": null,
+        "real_node_id": "12"
+      }
+    }
+  }
+}

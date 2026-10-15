@@ -1,0 +1,76 @@
+{
+  "date": "2026-10-15",
+  "gpu": "NVIDIA GeForce RTX 5080",
+  "width": 4096,
+  "height": 4096,
+  "steps": 28,
+  "seed": 0,
+  "prompt": "A natural editorial photograph of an adult woman in a linen jacket standing beside a cafe window, soft daylight, realistic skin texture, relaxed expression, detailed fabric, coherent anatomy, a small glass bottle on the table, restrained colors, subtle film grain.",
+  "model": "flux1-krea-dev_fp8_scaled.safetensors",
+  "protocol": "OFF then ON; fresh server process per variant; same flags; OS filesystem cache not flushed.",
+  "gpu_sampling_interval_seconds": 0.1,
+  "memory_note": "NVML measurements are whole-card usage including desktop/driver; PyTorch metrics exclude custom dynamic-VRAM allocations.",
+  "plugin_file_sha256": {
+    "adapter.py": "56115e31190e73c921dc14d9a408f24e480dd5a97292ef1a77d0d24ef3691282",
+    "nodes.py": "ce994f9ea4131c45a7211bfc0b28be345cde1942ce31555770927d58c6db828f",
+    "saving.py": "b5444349da377b5a6aa006241ee7e4fac97a6acdaaa1805a4fa1814ef2499923",
+    "__init__.py": "4c0f96b0f0006df5a559d09d44b8d521a32d7992383223310b5ba2a3f88e3e42",
+    "area_core/attention.py": "0fda854116949001d194e8b5b9fde3ea36a45e8638458fd7afad29feebb5e5dd",
+    "area_core/backend.py": "204e9fafe73481a17887abd3bacce1ba64b33560c1e7ddb86323b68cfab9e5f5",
+    "area_core/bridge.py": "f4885a50754789c3a6b35e60adc6eac2592d3110cb6afae7c770dc9497a512c6",
+    "area_core/schedule.py": "8d9f52852dbc4ac897403123012c25da83e02652c73e9cd1ae8eb5f511721d8c",
+    "area_core/tiling.py": "25835d14c8f520d168035446c27cddc1fbf8ff62a9b2289ef99edeb846e2d0d3",
+    "area_core/__init__.py": "29389c54b1319949738f82a1aa1d8818fec5603c191084f1a880c7034b9bffba",
+    "tests/reference_host.py": "9f15a427622d318d2639d5f560ab0ba9b1f7d29a217aad410806bb9d4124dfc1",
+    "tests/test_comfy_reference.py": "226ca005799be1a6862cbc564bc770be36fe71b399ac19ac7f0ed4bfd69211d4",
+    "tests/test_regressions.py": "22948b2e2eee3ea6f9cd334518d0feb31eed73d89d60eb514a8b5591669b52b8"
+  },
+  "variants": {
+    "off": {
+      "status": "success",
+      "workflow_seconds": 987.141,
+      "sampler_metrics": {
+        "seed": 0,
+        "steps": 28,
+        "cfg": 1.0,
+        "sampler": "euler",
+        "scheduler": "simple",
+        "denoise": 1.0,
+        "sampler_entry_allocated_bytes": 9847816,
+        "denoise_seconds": 963.7795831000003,
+        "status": "success",
+        "sampler_node_seconds_including_model_load": 963.991990100003,
+        "torch_peak_allocated_bytes": 6208868050,
+        "torch_peak_reserved_bytes": 8757706752,
+        "note": "PyTorch peaks exclude allocations owned by ComfyUI dynamic VRAM/custom CUDA allocators."
+      },
+      "gpu_used_before_prompt_bytes": 1307750400,
+      "observed_peak_gpu_used_bytes": 15291822080,
+      "observed_peak_server_rss_bytes": 13707436032,
+      "min_available_ram_bytes": 1743777792
+    },
+    "on": {
+      "status": "success",
+      "workflow_seconds": 547.175,
+      "sampler_metrics": {
+        "seed": 0,
+        "steps": 28,
+        "cfg": 1.0,
+        "sampler": "euler",
+        "scheduler": "simple",
+        "denoise": 1.0,
+        "sampler_entry_allocated_bytes": 9847816,
+        "denoise_seconds": 524.8826585000024,
+        "status": "success",
+        "sampler_node_seconds_including_model_load": 525.0951730000015,
+        "torch_peak_allocated_bytes": 7245001478,
+        "torch_peak_reserved_bytes": 10536091648,
+        "note": "PyTorch peaks exclude allocations owned by ComfyUI dynamic VRAM/custom CUDA allocators."
+      },
+      "gpu_used_before_prompt_bytes": 1489481728,
+      "observed_peak_gpu_used_bytes": 14227402752,
+      "observed_peak_server_rss_bytes": 14752104448,
+      "min_available_ram_bytes": 2126495744
+    }
+  }
+}

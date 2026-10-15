@@ -1,0 +1,36 @@
+Local prerelease CPU-only check. No checkpoint or ComfyUI server started.
+ComfyUI reference: ba994879b88d0ebd9950b1e5c1e923d928f216ba
+UTC start: 2026-10-15T12:50:58.576832+00:00
+
+test_batched_output_matches_individual_images (test_comfy_reference.ComfyReferenceTests.test_batched_output_matches_individual_images) ... ok
+test_bfloat16_model_executes_both_phases (test_comfy_reference.ComfyReferenceTests.test_bfloat16_model_executes_both_phases) ... ok
+test_both_phases_execute_real_double_and_single_blocks (test_comfy_reference.ComfyReferenceTests.test_both_phases_execute_real_double_and_single_blocks) ... ok
+test_conflict_added_after_area_is_rejected (test_comfy_reference.ComfyReferenceTests.test_conflict_added_after_area_is_rejected) ... ok
+test_disabled_node_clones_without_patches (test_comfy_reference.ComfyReferenceTests.test_disabled_node_clones_without_patches) ... ok
+test_duplicate_and_conflicting_patches_rejected (test_comfy_reference.ComfyReferenceTests.test_duplicate_and_conflicting_patches_rejected) ... ok
+test_exception_does_not_leave_model_mutated (test_comfy_reference.ComfyReferenceTests.test_exception_does_not_leave_model_mutated) ... ok
+test_native_resolution_matches_unpatched_model (test_comfy_reference.ComfyReferenceTests.test_native_resolution_matches_unpatched_model) ... ok
+test_original_branch_is_unchanged_after_patched_forward (test_comfy_reference.ComfyReferenceTests.test_original_branch_is_unchanged_after_patched_forward) ... ok
+test_rotary_math_matches_comfy (test_comfy_reference.ComfyReferenceTests.test_rotary_math_matches_comfy) ... ok
+test_adaptive_tiling_has_full_coverage_and_budget (test_regressions.KernelTests.test_adaptive_tiling_has_full_coverage_and_budget) ... ok
+test_bridge_batch_cancellation_regression (test_regressions.KernelTests.test_bridge_batch_cancellation_regression) ... ok
+test_bridge_matches_independent_formula (test_regressions.KernelTests.test_bridge_matches_independent_formula) ... ok
+test_pooling_retains_text_and_same_kv_indices (test_regressions.KernelTests.test_pooling_retains_text_and_same_kv_indices) ... ok
+test_registers_do_not_select_local_tokens (test_regressions.KernelTests.test_registers_do_not_select_local_tokens) ... ok
+test_window_attention_matches_dense_mask_oracle (test_regressions.KernelTests.test_window_attention_matches_dense_mask_oracle) ... ok
+test_window_chunking_does_not_change_results (test_regressions.KernelTests.test_window_chunking_does_not_change_results) ... ok
+test_chinese_and_workflow_metadata (test_regressions.SavingTests.test_chinese_and_workflow_metadata) ... ok
+test_exclusive_create_survives_forced_collision (test_regressions.SavingTests.test_exclusive_create_survives_forced_collision) ... ok
+test_parallel_saves_are_unique (test_regressions.SavingTests.test_parallel_saves_are_unique) ... ok
+test_prefix_cannot_escape_output_and_metadata_can_be_disabled (test_regressions.SavingTests.test_prefix_cannot_escape_output_and_metadata_can_be_disabled) ... ok
+test_actual_sigmas_not_model_call_count (test_regressions.ScheduleTests.test_actual_sigmas_not_model_call_count) ... ok
+test_bad_phase_fails_early (test_regressions.ScheduleTests.test_bad_phase_fails_early) ... ok
+test_config_nonfinite_rejected (test_regressions.ScheduleTests.test_config_nonfinite_rejected) ... ok
+test_invalid_sigmas_rejected (test_regressions.ScheduleTests.test_invalid_sigmas_rejected) ... ok
+test_pooling_never_reverts_to_full_attention_on_odd_grids (test_regressions.ScheduleTests.test_pooling_never_reverts_to_full_attention_on_odd_grids) ... ok
+test_short_schedules_keep_both_phases (test_regressions.ScheduleTests.test_short_schedules_keep_both_phases) ... ok
+
+----------------------------------------------------------------------
+Ran 27 tests in 4.340s
+
+OK

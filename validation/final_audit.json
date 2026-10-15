@@ -1,0 +1,78 @@
+{
+  "version": "0.1",
+  "audited_utc": "2026-10-15T13:05:21.817535+00:00",
+  "status": "passed_with_disclosed_experimental_limits",
+  "publication_status": "not_published",
+  "gpu_generation_performed": false,
+  "comfyui_requests_performed": false,
+  "network_scope": "Read-only public upstream license/citation/root metadata and Apache license terms.",
+  "inference_and_existing_test_python_unchanged": true,
+  "historical_gpu_measurements_unchanged": true,
+  "api_prompts_unchanged_from_prior_package": [
+    "workflows/01_Krea_FP8_2K_AReA_ON_API.json",
+    "workflows/02_Krea_FP8_4K_AReA_ON_API.json",
+    "workflows/03_Krea_FP8_4K_AReA_OFF_API.json",
+    "workflows/zh-CN/01_Krea_FP8_2K_AReA_ON_API.json",
+    "workflows/zh-CN/02_Krea_FP8_4K_AReA_ON_API.json",
+    "workflows/zh-CN/03_Krea_FP8_4K_AReA_OFF_API.json"
+  ],
+  "prior_package_sha256": "29f1f592442281ff98acc8770a33af6d4701192046798a56208d6f8ea89b3091",
+  "findings": [
+    {
+      "id": "F1",
+      "priority": "P1",
+      "status": "fixed",
+      "detail": "Removed 56 redundant named-widget fields; two 2K workflows retained local model subfolders and all six retained duplicate Notes."
+    },
+    {
+      "id": "F2",
+      "priority": "P2",
+      "status": "fixed",
+      "detail": "Completed NOTICE original/distributed path mapping and added source-file attribution."
+    },
+    {
+      "id": "F3",
+      "priority": "P2",
+      "status": "fixed",
+      "detail": "Clarified assistant visual inspection versus independent human evaluation in both test documents."
+    },
+    {
+      "id": "F4",
+      "priority": "P2",
+      "status": "fixed",
+      "detail": "Normalized remaining historical relative model selections to basenames without changing metrics or output hashes."
+    }
+  ],
+  "unresolved_release_blockers": [],
+  "remaining_limits": [
+    "No new live-browser import or trained-checkpoint generation for public portable graphs.",
+    "No remote CI run.",
+    "Historical visual coverage remains one prompt and seed; P0 4/6 and P1 0/12.",
+    "Other quantization, LoRA/control/compile/multi-GPU combinations remain unverified."
+  ],
+  "verified_utc": "2026-10-15T13:07:08.545838+00:00",
+  "path_and_credential_scan": {
+    "text_files_scanned": 64,
+    "actual_leaks_found": 0,
+    "decoded_json_and_percent_encoded_strings_checked": true,
+    "legacy_model_subfolders_found": 0
+  },
+  "comparison_jpeg_metadata": {
+    "exif_fields": 0,
+    "string_metadata_fields": 0,
+    "metadata_keys": [
+      "jfif",
+      "jfif_density",
+      "jfif_unit",
+      "jfif_version"
+    ]
+  },
+  "static_verification": "passed",
+  "archive_verification": "Recorded in the external archive receipt; excluded here to avoid a self-referential ZIP checksum.",
+  "post_audit_note_revision": {
+    "updated_utc": "2026-10-15T13:11:30.052246+00:00",
+    "scope": "Shortened Notes to one or two lines and reduced Note box heights.",
+    "executable_nodes_and_api_prompts_unchanged": true,
+    "generation_performed": false
+  }
+}

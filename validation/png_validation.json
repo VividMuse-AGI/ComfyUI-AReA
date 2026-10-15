@@ -1,0 +1,38 @@
+{
+  "outputs": [
+    {
+      "file": "output/AReA_4K_2step_smoke_NOT_quality_20261015T071528902074Z_14d2ad91df854284a5c987710aa5b0f4.png",
+      "size": [
+        4096,
+        4096
+      ],
+      "bytes": 32802108,
+      "steps": 2,
+      "pixel_std": 27.43,
+      "prompt_metadata": true
+    },
+    {
+      "file": "output/AReA_krea_2048_28steps_20261015T071332181975Z_17f0074a85414591818a17f3e5c29a5d.png",
+      "size": [
+        2048,
+        2048
+      ],
+      "bytes": 5234371,
+      "steps": 28,
+      "pixel_std": 82.54,
+      "prompt_metadata": true
+    },
+    {
+      "file": "output/AReA_smoke_1280_2steps_20261015T070921738754Z_8a1d58d7f92846c284155ebb75e53293.png",
+      "size": [
+        1280,
+        1280
+      ],
+      "bytes": 1257823,
+      "steps": 2,
+      "pixel_std": 83.89,
+      "prompt_metadata": true
+    }
+  ],
+  "manual_review_2k": "Subject structure complete; no obvious window seams or saturated dots. Multiple bottles present; exact object-count correctness not established."
+}
